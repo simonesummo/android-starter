@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -34,6 +35,10 @@ android {
                 enable = false
             }
         }
+    }
+
+    buildFeatures {
+        compose = true
     }
 
     compileOptions {
