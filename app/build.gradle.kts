@@ -29,6 +29,7 @@ android {
         }
         release {
             isMinifyEnabled = true
+            isShrinkResources = true
             optimization {
                 enable = false
             }
@@ -46,6 +47,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
+    implementation(platform(libs.androidx.compose.bom))
 
     // Unit test
     testImplementation(libs.junit)
@@ -53,4 +55,5 @@ dependencies {
     // Instrumentation test
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
 }
