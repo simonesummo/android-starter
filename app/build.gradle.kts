@@ -61,6 +61,7 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
     implementation(libs.koin.compose.navigation)
+    implementation(libs.kotlinx.coroutines.android)
 
     // Main - debug only
     debugImplementation(libs.androidx.ui.tooling)
