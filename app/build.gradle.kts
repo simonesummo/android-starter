@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -43,6 +44,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.compose.material3)
     // Main
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
