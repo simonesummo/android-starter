@@ -6,16 +6,11 @@ plugins {
 android {
     namespace = "it.ssummo.androidstarter"
 
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
-
     defaultConfig {
         applicationId = "it.ssummo.androidstarter"
         minSdk = 30
         targetSdk = 36
+        compileSdk = 37
         versionCode = 1
         versionName = "1.0"
 
