@@ -2,6 +2,14 @@
 
 An evolving Android starter template for building modern applications with Kotlin, Jetpack Compose, and the latest Android development tools.
 
+## Setup
+
+After cloning the repository, configure the local development environment:
+
+```bash
+./scripts/setup.sh
+```
+
 ## Goal
 
 This project serves as my personal foundation for new Android applications.
