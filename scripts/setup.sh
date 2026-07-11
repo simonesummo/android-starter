@@ -2,9 +2,10 @@
 
 set -e
 
+HOOKS_DIR=".githooks"
+
 echo "Configuring Git hooks..."
 
-git config core.hooksPath .githooks
-chmod +x .githooks/*
+git config core.hooksPath "$HOOKS_DIR"
 
-echo "Setup completed successfully."
+echo "Git hooks configured successfully."
