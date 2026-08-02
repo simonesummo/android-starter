@@ -43,7 +43,11 @@ Rather than being a one-time template, it is a living project where I experiment
 
 🚧 Work in progress.
 
-This repository evolves continuously as I learn, experiment, and adopt new Android technologies.
+- ✅ Android project bootstrap
+- ✅ Local development workflow
+- 🚧 CI/CD pipeline
+- ⬜ Versioning strategy
+- ⬜ Release workflow
 
 ## License
 
