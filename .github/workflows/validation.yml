@@ -1,0 +1,50 @@
+name: Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  sanity:
+    name: Sanity Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Android environment
+        uses: ./.github/actions/setup-android
+
+      - name: Run sanity check
+        run: ./gradlew sanityCheck
+
+
+  test:
+    name: Tests
+    needs: sanity
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Android environment
+        uses: ./.github/actions/setup-android
+
+      - name: Run unit tests
+        run: ./gradlew test
+
+      - name: Run Android tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          script: ./gradlew connectedAndroidTest
