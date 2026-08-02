@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+echo "Running sanity checks..."
+
+./gradlew sanityCheck
+
+echo "Sanity checks passed."

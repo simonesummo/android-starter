@@ -66,5 +66,6 @@ docs: add architecture decision notes
 
 - Use the imperative mood (e.g. "add", not "added")
 - Keep the subject line concise and meaningful
+- Keep the commit subject under 50 characters
 - Prefer small and focused commits
 - Do not mix unrelated changes in a single commit

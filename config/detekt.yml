@@ -1,0 +1,10 @@
+naming:
+  FunctionNaming:
+    ignoreAnnotated:
+      - 'Composable'
+  MatchingDeclarationName:
+    excludes:
+      - '**/*Navigation.kt'
+style:
+  NewLineAtEndOfFile:
+    active: false
