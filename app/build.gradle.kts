@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.detekt)
 }
 
 android {
@@ -80,4 +81,20 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    config.setFrom("../config/detekt.yml")
+}
+
+tasks.register("sanityCheck") {
+    group = "verification"
+    description = "Runs fast local quality checks."
+
+    dependsOn(
+        "compileDebugKotlin",
+        "detekt",
+        "lintDebug"
+    )
 }
