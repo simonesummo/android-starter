@@ -13,7 +13,7 @@ on:
 jobs:
   sanity:
     name: Sanity Check
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout
@@ -29,7 +29,7 @@ jobs:
   test:
     name: Tests
     needs: sanity
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout
@@ -44,7 +44,9 @@ jobs:
       - name: Run Android tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 35
+          api-level: 34
           target: google_apis
           arch: x86_64
+          emulator-options: -no-window -no-audio -no-boot-anim -no-snapshot
+          disable-animations: true
           script: ./gradlew connectedAndroidTest
