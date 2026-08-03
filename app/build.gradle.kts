@@ -86,6 +86,12 @@ dependencies {
 detekt {
     buildUponDefaultConfig = true
     config.setFrom("../config/detekt.yml")
+
+    source.setFrom(
+        "src/main/kotlin",
+        "src/test/kotlin",
+        "src/androidTest/kotlin"
+    )
 }
 
 tasks.register("sanityCheck") {
