@@ -16,20 +16,20 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        multiDexEnabled = true
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         debug {
             optimization {
-                enable = true
+                enable = false
             }
         }
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
             optimization {
-                enable = false
+                enable = true
             }
         }
     }
@@ -86,6 +86,12 @@ dependencies {
 detekt {
     buildUponDefaultConfig = true
     config.setFrom("../config/detekt.yml")
+
+    source.setFrom(
+        "src/main/kotlin",
+        "src/test/kotlin",
+        "src/androidTest/kotlin"
+    )
 }
 
 tasks.register("sanityCheck") {
